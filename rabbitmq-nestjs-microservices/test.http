@@ -1,0 +1,10 @@
+### Create Order
+POST http://localhost:3000/api/order
+Content-Type: application/json
+
+{
+  "productId": "12345",
+  "quantity": 2,
+  "customerId": "user-001",
+  "totalPrice": 99.99
+}
