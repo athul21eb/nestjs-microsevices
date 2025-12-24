@@ -1,0 +1,5 @@
+
+
+export const MICROSERVICES_CLIENTS = {
+  KAFKA_SERVICE: 'KAFKA_SERVICE',
+}

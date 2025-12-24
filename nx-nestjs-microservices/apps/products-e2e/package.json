@@ -1,0 +1,26 @@
+{
+  "name": "@nx-nestjs-microservices/products-e2e",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "implicitDependencies": [
+      "@nx-nestjs-microservices/products"
+    ],
+    "targets": {
+      "e2e": {
+        "executor": "@nx/jest:jest",
+        "outputs": [
+          "{projectRoot}/test-output/jest/coverage"
+        ],
+        "options": {
+          "jestConfig": "apps/products-e2e/jest.config.cts",
+          "passWithNoTests": true
+        },
+        "dependsOn": [
+          "@nx-nestjs-microservices/products:build",
+          "@nx-nestjs-microservices/products:serve"
+        ]
+      }
+    }
+  }
+}

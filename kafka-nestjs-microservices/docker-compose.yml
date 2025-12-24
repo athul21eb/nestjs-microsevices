@@ -1,0 +1,16 @@
+services:
+  zookeeper:
+    image: wurstmeister/zookeeper
+    container_name: zookeeper
+    ports:
+      - '2181:2181'
+
+  kafka:
+    image: wurstmeister/kafka
+    container_name: kafka
+    ports:
+      - '9093:9093'
+    environment:
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9093
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9093
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181

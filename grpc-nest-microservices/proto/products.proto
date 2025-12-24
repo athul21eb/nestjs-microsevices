@@ -1,0 +1,20 @@
+
+syntax = "proto3";
+
+package products;
+
+service Products {
+    rpc GetProducts (GetProductsRequest) returns (GetProductsResponse);
+}
+
+message GetProductsRequest {
+ int32 productId = 1;
+  int32 productIddd = 2;
+
+}
+
+message GetProductsResponse {
+    int32 productId = 1;
+    string name = 2;
+    int32 price = 3;
+}

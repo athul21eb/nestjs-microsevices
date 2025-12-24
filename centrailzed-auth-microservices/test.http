@@ -1,0 +1,17 @@
+### Login to Auth Service
+# @name login
+POST http://localhost:3000/api/auth HTTP/1.1
+Content-Type: application/json
+
+{
+  "username": "athul",
+  "password": "10athul10"
+}
+
+###
+
+### Get User Profile (Protected Route)
+POST http://localhost:3000/api/user/profile HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{login.response.body.token}}
+
